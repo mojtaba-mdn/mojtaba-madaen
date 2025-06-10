@@ -24,7 +24,7 @@ lcd_init(16);
 lcd_clear();
 lcd_putsf("Hello           Wellcome");
 
-//step1:Delay Time Sensor Stability to Ready Power  = 1(S) 
+//step1:Delay Time Sensor Stability to Ready Power  >= 1(S) 
       
 delay_ms(2000);                                   
 
