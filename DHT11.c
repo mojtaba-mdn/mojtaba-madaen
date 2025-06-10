@@ -102,7 +102,7 @@ DDRB=(0<<DDB0);
          
  lable4:
  
- //step3: Wait For Recieve 40 Bits  From Sensor  On DataBusLine = I/O B.2 
+ //step3: Wait For Recieve 40 Bits  From Sensor  On DataBusLine = I/O B.0 
   
  //Read bit[i]
 
