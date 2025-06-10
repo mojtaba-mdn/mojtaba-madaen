@@ -32,7 +32,7 @@ delay_ms(2000);
 WDTCR=(1<<WDTOE) | (1<<WDE);
 WDTCR=0x00;
 
-//step2: Send  Signal (18ms Low) From MCU On DataBusLine = I/O B.2 
+//step2: Send  Signal (18ms Low) From MCU On DataBusLine = I/O B.0 
  
  lable1:
 // Watchdog Timer Prescaler: OSC/2048k
