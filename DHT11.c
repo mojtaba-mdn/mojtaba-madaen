@@ -1,26 +1,3 @@
-/*******************************************************
-This program was created by the
-CodeWizardAVR V3.14 Advanced
-Automatic Program Generator
-© Copyright 1998-2014 Pavel Haiduc, HP InfoTech s.r.l.
-http://www.hPORTfotech.com
-
-Project :DHT11.Lib
-Version : 
-Date    : 
-Author  : 
-Company : 
-Comments: 
-
-
-Chip type               : ATmega16
-Program type            : Application
-AVR Core Clock frequency: MHz
-Memory model            : Small
-External RAM size       : 0
-Data Stack size         : 256
-*******************************************************/
-
 #include <mega16.h>
 #include <delay.h>
 #include <stdlib.h>       
@@ -39,7 +16,6 @@ int t;
 int i=0;
 
 void main(void) {
-
    
 // Watchdog Timer Prescaler: OSC/2048k
 WDTCR=(0<<WDTOE) | (1<<WDE) | (1<<WDP2) | (1<<WDP1) | (1<<WDP0); 
@@ -55,7 +31,6 @@ delay_ms(2000);
 //reset WDT */
 WDTCR=(1<<WDTOE) | (1<<WDE);
 WDTCR=0x00;
-
 
 //step2: Send  Signal (18ms Low) From MCU On DataBusLine = I/O B.2 
  
@@ -106,15 +81,8 @@ DDRB=(0<<DDB0);
        goto lable3;
           } 
     
-
-
-
         if (Htc>=Ltc) {   
        // Link Ok   
-       //  lcd_clear();
-       //  lcd_gotoxy(0,0);
-       //  lcd_putsf(" Sensor link ok"); 
-       //  delay_ms(1000);                       
        Htc=0;
        Ltc=0;
        goto lable4;
@@ -131,8 +99,7 @@ DDRB=(0<<DDB0);
        Ltc=0;
        goto lable1;          
         } ;
-          
-
+         
  lable4:
  
  //step3: Wait For Recieve 40 Bits  From Sensor  On DataBusLine = I/O B.2 
@@ -148,7 +115,6 @@ DDRB=(0<<DDB0);
        Ltc++;      
        goto lable5;
           } 
-
             
        lable6:
    
@@ -158,9 +124,7 @@ DDRB=(0<<DDB0);
        goto lable6;          
 
           } 
-
-   
-    
+      
        if (Htc<Ltc) { 
        Bitdata=0; 
        Bit[i]=Bitdata; 
@@ -175,8 +139,7 @@ DDRB=(0<<DDB0);
        Htc=0;
        Ltc=0;
         }
-        
-      
+           
    };    
    
           
